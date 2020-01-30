@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    
+    </head>
+<body>
+<audio id="myA">
+    <source src="animalsNumber/8.wav" type="audio/wav">
+    <source src="8.mp3" type="audio/mpeg">
+</audio>
+
+<h2>JavaScript Can Validate Input</h2>
+<p>ป้อนค่าเป็นตัวเลข ระหว่าง 1 ถึง 10: </p>
+ป้อนค่า x <input id="numb" size=3/>
+<button type="button" onclick="myF()">Submit</button>
+<p id="d" style="font-size: 20;"></p>
+<p id="pic"></p>
+<p id="vx" style="font-size: 30"></p>
+<p id="s1"></p>
+
+<script>
+    /*var varpic;
+    varpic = document.getElementById("numb").value;
+    function myP(){
+        document.getElementById("pic").innerHTML = "<img src=animalsNumber/"+varpic+".jpg width=114 height=114>";
+    }*/
+    
+    
+    function myF(){
+        var x, text;
+        x = document.getElementById("numb").value;
+        if(isNaN(x) || x < 0 || x > 9){
+            text = "X Input Not Value";
+        }else{
+            text = "X Input OK";
+            myP();
+            playAudio();
+        }
+        document.getElementById("d").innerHTML = text;
+        document.getElementById("vx").innerHTML = x;
+
+        function myP(){
+            var varpic = document.getElementById("numb").value;
+            document.getElementById("pic").innerHTML = "<img src=animalsNumber/"+varpic+".jpg width=300 height=300>";
+        }
+        function playAudio(){
+            var vara = document.getElementById("numb").value;
+            document.getElementById("s1").innerHTML = "<OBJECT DATA='SoundNumber/"+vara+".wav' TYPE='audio/wav' TITLE='description' WIDTH=0 HEIGHT=0>";
+        }
+    }
+
+    
+    
+    
+
+
+</script>
+
+    </body>
+</html>

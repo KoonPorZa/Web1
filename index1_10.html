@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    
+    </head>
+<h2>JavaScript Can Validate Input</h2>
+<p>ป้อนค่าเป็นตัวเลข 2 ชุด ระหว่าง 1 ถึง 10: </p>
+ป้อนค่า x<input id="numb" size=3/>
+ป้อนค่า y<input id="numb2" size=3/>
+<button type="button" onclick="myF()">Submit</button>
+
+<p id="d"></p>
+<script>
+function myF(){
+    var x,y, text;
+    x = document.getElementById("numb").value;
+    y = document.getElementById("numb2").value;
+    if(isNaN(x) || x < 1 || x > 10){
+        text = "X Input not valid";
+    }
+        //text = "Input not valid";
+    else if (isNaN(y) || y < 1 || y > 10){
+        text = "Y Input not valid";
+    }else{
+        text = "X,Y Input OK";
+    }
+    document.getElementById("d").innerHTML = text;
+}
+
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<hmtl>
+    <head>
+        <meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    </head>
+    <body>
+        <center>
+        <p style="font-size: 36;">สุ่มเลข 0-9</p>
+        <p id="ran1"></p>
+        <p id="sound1"></p>
+        <p id="sound2"></p>
+        <p id="sound3"></p>
+        <br>
+        <button onclick="random()" style="font-size: 48;" type="button">Random</button>
+
+        <script>
+            var x,y,z;
+            var xx,yy,zz;
+            function random(id){
+                x = Math.floor(Math.random()*9); //ร้อย
+                y = Math.floor(Math.random()*9); //สิบ
+                z = Math.floor(Math.random()*9); //หน่วย
+                document.getElementById("ran1").innerHTML = 
+                "<center><table border='10' style='font-size: 120;'><tr><td>"+x+"</td><td>"+y+"</td><td>"+z+"</td></tr></table></center>";
+                setTimeout("sx(this);",1000);
+            }
+            function sx(id){
+                document.getElementById("sound1").innerHTML = "<OBJECT DATA='SoundNumber/"+x+".wav' TYPE='audio/wav' TITLE='description' WIDTH=0 HEIGHT=0>";
+                setTimeout("sy(this);",1000);
+            }
+            function sy(id){
+                document.getElementById("sound2").innerHTML = "<OBJECT DATA='SoundNumber/"+y+".wav' TYPE='audio/wav' TITLE='description' WIDTH=0 HEIGHT=0>";       
+                setTimeout("sz(this);",1000);
+            }
+            function sz(id){
+                document.getElementById("sound3").innerHTML = "<OBJECT DATA='SoundNumber/"+z+".wav' TYPE='audio/wav' TITLE='description' WIDTH=0 HEIGHT=0>";   
+            }
+        </script>
+        </center>
+    </body>
+</hmtl>
